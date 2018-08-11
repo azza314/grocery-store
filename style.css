@@ -4,7 +4,7 @@ body{
 .headerNav{
     display: flex;
 }
-h1{
+h1,h3{
     font-family: "Lobster Two", cursive;
     font-size: 3em; 
     color:#196543;
@@ -43,7 +43,7 @@ ul li{
 }
 
 .checkout{
-    background-color:lightpink;
+    background-color:#BADBCC;
     margin-left: 10%
 }
 
@@ -51,49 +51,60 @@ ul li{
 
 
 .apple, .banana, .blueberry, .grapes, .orange, .pear, .pepper, .carrot, .yellowsquash, .eggplant, .lettuce, .potato, .milk, .butter, .bread, .garlic, .cheese, .eggs{
-    width: 50%;
+    width: 100%;
+    height: auto;
+    border: 2px solid green;
 } 
-/* .apple, .banana, .blueberry, .grapes, .orange, .pear, .pepper, .carrot, .yellowsquash, .eggplant, .lettuce, .potato, .milk, .butter, .bread, .garlic, .cheese, .eggs{
-    width: 25%;
-}  */
 
 .fruitGrid, .veggieGrid, .dairyGrid{
     display:grid;
     max-width:100%;
+    padding-right: 1%;
 
 }
-
-.apple{
+/* Fruit Grid  */
+.apple, .peppers, .milk{
     grid-row: 1 / span 1;
     grid-column: 1 / span 1;
-    padding-right: 1%;
+  
 }
-.banana{
+.banana, .carrot, .garlic{
     grid-row: 1 / span 1;
     grid-column: 2 / span 1;
-    padding-right: 1%;
+    
 }
 
-.orange{
+.orange, .yellowSquash, .butter{
     grid-row: 2 / span 1;
     grid-column: 1 / span 1;
-    padding-right: 1%;
+   
 }
 
-.blueberry{
+.blueberry, .eggplant, .bread{
     grid-row: 2 span 1;
     grid-column: 2 / span 1;
-    padding-right: 1%;
+    
 }
-.grapes{
+.grapes, .lettuce, .cheese{
     grid-row: 3/ span 1;
     grid-column: 1 / span 1;
-    padding-right: 1%;
+    
 
 }
 
-.pear{
+.pear, .potato, .egg{
     grid-row: 3/ span 1;
     grid-column: 2 / span 1;
-    padding-right: 1%;
+ 
+}
+
+i{
+    font-size: 4em;
+    color:white;
+    text-align: center;
+    text-shadow: 1px 1px 0 #196543;
+}
+
+.cartBkrnd{
+    color:white;
 }
