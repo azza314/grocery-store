@@ -4,7 +4,7 @@ body{
 .headerNav{
     display: flex;
 }
-h1,h3{
+h1,h3,h4{
     font-family: "Lobster Two", cursive;
     font-size: 3em; 
     color:#196543;
@@ -20,6 +20,11 @@ h1, .navbar{
 .navbar li:hover{
     color:darkgrey;
 }
+ .cartContent, .cartList li{
+    display: inline-block;
+    clear: both;
+    color:red;
+}
 
 ul{
     width: max-content;
@@ -33,6 +38,7 @@ ul li{
     position: relative;
     padding-right: 3%;
 } 
+
 
 .screenSplit{
     display:flex;

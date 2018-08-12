@@ -72,23 +72,54 @@ function addToCart(item){
 }
 
 var allItems = []
+var getCartElement = document.getElementById("cartContent")
 // Expands array into arguments to push(destructure)
 // [0, 1] -> 0, 1
 allItems.push(...fruitArray)
 allItems.push(...veggieArray)
 allItems.push(...dairyArray)
 
+
 for (let i=0; i<allItems.length; i++){
     var itemEle = document.querySelector('img.' + allItems[i].name)
 
-    // console.log(allItems[i].name + " " + itemEle)
     itemEle.addEventListener('click',function(){
         addToCart(allItems[i])
+        // var CartElement = document.write(allItems[i].name);
+        var cartList = document.querySelector("ul.cartList")
+    
+        var newItem = document.createElement("li")
+        console.log(newItem)
+       
+        var newDiv = document.createElement("div")
+
+        newItem.appendChild(document.createTextNode(allItems[i].name));
+        cartList.appendChild(newItem)
+        cartList.appendChild(newDiv)
+        
+        // itemTotal = itemTotal + ;
+
+
+      var newPrice = Number(document.querySelector(".total").innerHTML) + Number(allItems[i].price);
+
+      var roundedPrice = Math.max( Math.round(newPrice * 10) / 10, 2.8 ).toFixed(2);
+      
+      document.querySelector(".total").innerHTML = roundedPrice;
+
+
+
+        console.log(cartList)
+        // var cartTotal = document.
     })
+ 
+    // document.getElementById("cartContents").innerHTML=allItems[i].name;
+
+
+    
 }
-
-
+//make a list of clicked items.
 
 
 // console.log(appleItem)
-// console.log(addToCart(apple))
+// console.log(addToCart(apple)
+
