@@ -1,11 +1,12 @@
 //create object constructor 
-function foodItem (name, dept, price, salePrice, onSale){
+function foodItem (name, dept, price, salePrice,        onSale){
     this.name = name; 
     this.dept = dept; 
     this.price = price;
     this.salePrice = salePrice;
     this.onSale = onSale; 
 }
+
 
 
 //create objects
@@ -26,7 +27,7 @@ var pearItem = new foodItem("pear","fruit", 1.99, 1.50,false);
 
 var pepperItem = new foodItem("pepper", "veggie", .89, .79, false);
 
-var carrotItem = new foodItem("pepper", "veggie", 3.99, 2.99, false);
+var carrotItem = new foodItem("carrot", "veggie", 3.99, 2.99, false);
 
 var yellowSquashItem = new foodItem("yellowsquash", "veggie", 2.49, 2.19, true);
 
@@ -62,13 +63,51 @@ eggplantItem,lettuceItem, potatoItem];
 
 var dairyArray = [milkItem,garlicItem,butterItem,breadItem,cheeseItem,eggsItem];
 
+function switchGrid(gridType, itemsArray){
+    var currGrid = document.querySelector(".grid")
+    var newGrid = document.createElement("div");
+
+    for(var i=0; i<itemsArray.length; i++){
+        var newItem = document.createElement("img")
+        newItem.setAttribute("src", 
+           "images/" + itemsArray[i].name + ".jpg")
+        newItem.setAttribute("class", itemsArray[i].name)
+
+        newGrid.appendChild(newItem)
+
+    }
+
+    currGrid.innerHTML = newGrid.innerHTML;
+    for(var i=0; i<itemsArray.length; i++){
+        registerAddToCart(itemsArray[i])
+    }
+}
+switchGrid('fruit', fruitArray)
+var fruitlink = document.querySelector("li.fruitLink")
+
+fruitlink.addEventListener('click',function(){
+    switchGrid('fruit', fruitArray) 
+})
+
+var veggieLink = document.querySelector("li.veggieLink")
+
+veggieLink.addEventListener('click',function(){
+    switchGrid('veggie', veggieArray) 
+})
+
+var dairyLink = document.querySelector("li.dairyLink")
+
+dairyLink.addEventListener('click',function(){
+    switchGrid('dairy', dairyArray) 
+})
+
 var cart = [];
 
 
 //store each item into shopping cart
 function addToCart(item){
     cart.push(item) 
-    console.log(cart)
+    addToPrice(item.price)
 }
 
 var allItems = []
@@ -80,12 +119,15 @@ allItems.push(...veggieArray)
 allItems.push(...dairyArray)
 
 
-for (let i=0; i<allItems.length; i++){
-    var itemEle = document.querySelector('img.' + allItems[i].name)
+// for (let i=0; i<allItems.length; i++){
+//     var itemEle = document.querySelector('img.' + allItems[i].name)
+
+function registerAddToCart(item){
+    var itemEle = document.querySelector('img.' + item.name)
 
     itemEle.addEventListener('click',function(){
-        addToCart(allItems[i])
-        // var CartElement = document.write(allItems[i].name);
+        addToCart(item)
+        
         var cartList = document.querySelector("ul.cartList")
     
         var newItem = document.createElement("li")
@@ -93,33 +135,17 @@ for (let i=0; i<allItems.length; i++){
        
         var newDiv = document.createElement("div")
 
-        newItem.appendChild(document.createTextNode(allItems[i].name));
+        newItem.appendChild(document.createTextNode(item.name + " " + item.price));
         cartList.appendChild(newItem)
         cartList.appendChild(newDiv)
-        
-        // itemTotal = itemTotal + ;
+    }
+)}
 
-
-      var newPrice = Number(document.querySelector(".total").innerHTML) + Number(allItems[i].price);
+function addToPrice(price){
+      var newPrice = Number(document.querySelector(".total").innerHTML) + Number(price);
 
       var roundedPrice = Math.max( Math.round(newPrice * 10) / 10, 2.8 ).toFixed(2);
-      
+
       document.querySelector(".total").innerHTML = roundedPrice;
-
-
-
-        console.log(cartList)
-        // var cartTotal = document.
-    })
- 
-    // document.getElementById("cartContents").innerHTML=allItems[i].name;
-
-
-    
-}
-//make a list of clicked items.
-
-
-// console.log(appleItem)
-// console.log(addToCart(apple)
+}        
 

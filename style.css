@@ -1,29 +1,54 @@
 body{
     font-family: "Lora", sans-serif;
 }
-.headerNav{
+/* .headerNav{
     display: flex;
+    justify-content: flex-start;
+    
+} */
+.navbar{
+    background-color: #196543;
+    white-space: nowrap;
+    font-family: "Lobster Two";
+    font-size: 1.5em;
+}
+.navbar li{
+    color:white;
+    background-color: #196543;
+}
+h1{
+    font-size:4em;
 }
 h1,h3,h4{
     font-family: "Lobster Two", cursive;
-    font-size: 3em; 
     color:#196543;
     margin: 0;
-    padding: .5em; 
     border-radius: 3%;
 }
-
-h1, .navbar{
+h3, h4{
+ padding: .5em; 
+ font-size:2em;
+}
+h3{
+    text-align: center;
+    text-decoration: underline; 
+}
+h4, .total{
+    color:white; 
+    text-shadow: 1px 1px 0 #196543;
+    text-decoration: underline;
+    font-size: 1.75em;
     text-align: center;
 }
-
 .navbar li:hover{
     color:darkgrey;
 }
  .cartContent, .cartList li{
     display: inline-block;
     clear: both;
-    color:red;
+    color:white;
+    font-size: 1.25em;
+    text-align: center;
 }
 
 ul{
@@ -39,30 +64,37 @@ ul li{
     padding-right: 3%;
 } 
 
+li{
+    text-transform:capitalize;
+}
 
+.navbar{
+    margin-top: 3%;
+    text-align: center;
+}
+.navbar ul{
+    font-size:1em;
+    padding-right:2em;
+}
 .screenSplit{
     display:flex;
 }
 
-.content{
-    background-color:lightgrey;
-}
-
-.checkout{
+section .checkout{
     background-color:#BADBCC;
-    margin-left: 10%
+    margin-left: 10%;
+    width: 100%;
 }
-
 
 
 
 .apple, .banana, .blueberry, .grapes, .orange, .pear, .pepper, .carrot, .yellowsquash, .eggplant, .lettuce, .potato, .milk, .butter, .bread, .garlic, .cheese, .eggs{
     width: 100%;
     height: auto;
-    border: 2px solid green;
+   
 } 
 
-.fruitGrid, .veggieGrid, .dairyGrid{
+.grid{
     display:grid;
     max-width:100%;
     padding-right: 1%;
@@ -94,14 +126,11 @@ ul li{
 .grapes, .lettuce, .cheese{
     grid-row: 3/ span 1;
     grid-column: 1 / span 1;
-    
-
 }
 
 .pear, .potato, .egg{
     grid-row: 3/ span 1;
     grid-column: 2 / span 1;
- 
 }
 
 i{
@@ -113,4 +142,15 @@ i{
 
 .cartBkrnd{
     color:white;
+}
+
+.checkout{
+    padding: 1em;
+    text-align: center;
+}
+
+@media only screen and (max-width: 350px){
+    h3, i,  h4.total{
+        font-size: 16px;
+    }
 }
