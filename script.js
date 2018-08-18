@@ -17,7 +17,7 @@ var bananaItem = new foodItem("banana", "fruit", .79,.59, false) ;
 
 var orangeItem = new foodItem("orange","fruit", 1.85, 1.50,true);
 
-var blueberryItem = new foodItem("blueberry","fruit", 2.99, 2.50,true);
+var blueberryItem = new foodItem("blueberry","fruit", 3.00, 2.50,true);
 
 var grapeItem = new foodItem("grapes","fruit", 4.99, 4.50,true);
 
